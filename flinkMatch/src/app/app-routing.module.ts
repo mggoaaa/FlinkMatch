@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { GuardGuard } from './guard.guard';
 
 //Import components
 import {LoginComponent} from './components/login/login.component';
@@ -26,7 +26,8 @@ const routes: Routes = [
 },
 {
   path: 'people/:preferredGender',
-  component:PeopleComponent
+  component:PeopleComponent,
+  canActivate: [GuardGuard]
 }
 
 ];

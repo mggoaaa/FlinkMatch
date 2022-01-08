@@ -8,6 +8,8 @@ import { RegisterUserComponent } from './components/register-user/register-user.
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { PeopleComponent } from './components/people/people.component';
+import { GuardGuard } from './guard.guard';
+import { CookieService } from 'ngx-cookie-service';
 //import { SwiperModule } from 'angular2-useful-swiper';
 
 @NgModule({
@@ -24,7 +26,7 @@ import { PeopleComponent } from './components/people/people.component';
     ReactiveFormsModule ,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
