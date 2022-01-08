@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     password:        string}= 
     { email:           "",
       password:        ""};
+  preferredGender: any = [];
 
   constructor(private serviceUser: LoginService,private router: Router) { }
 
@@ -22,9 +23,9 @@ export class LoginComponent implements OnInit {
   login(form: NgForm) {
     this.serviceUser.login(this.userLogin).subscribe(
       data => {
-
-        console.log(data.user.preferredGender);
-        this.router.navigateByUrl('/people');
+        this.preferredGender = data.user.preferredGender;
+        console.log(this.preferredGender);
+        this.router.navigateByUrl(`/people/${this.preferredGender}`);
       }
       
     );

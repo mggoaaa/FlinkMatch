@@ -4,25 +4,20 @@
             <h4 class="card-header">people</h4>
             <div class="card-body">
                 <form >
-                    <div class="form-group">
-                        <label for="username">email</label>
-                        <input type="email"  class="form-control"  />
-                        <div  class="invalid-feedback">
-                            <div >email is required</div>
+                    <div *ngFor="let people of contact">
+                        <div class="form-group">
+                            <label for="username">{{people.name}} gender: {{people.gender}}</label>
+
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password"  class="form-control" />
-                        <div  class="invalid-feedback">
-                            <div >Password is required</div>
-                        </div>
-                    </div>
+                   
                     <div class="form-group">
                         <button  class="btn btn-primary mt-2" type="submit">
-                            Login
+                            YES
                         </button>
-                        <a routerLink="/register-user" class="btn btn-link">Register</a>
+                        <button  class="btn btn-primary mt-2" type="submit">
+                            NO
+                        </button>
                     </div>
                 </form>
             </div>

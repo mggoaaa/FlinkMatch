@@ -25,7 +25,7 @@ const routes: Routes = [
   component:RegisterUserComponent
 },
 {
-  path: 'people',
+  path: 'people/:preferredGender',
   component:PeopleComponent
 }
 
