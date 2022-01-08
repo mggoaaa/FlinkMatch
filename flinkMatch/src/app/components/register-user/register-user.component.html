@@ -6,14 +6,12 @@
                 <!-- Nested Row within Card Body -->
                     <form  (ngSubmit)="newUser(LoginForm)" #LoginForm='ngForm'>
                         <div class="form-group row mb-2">
-                            <label for="email" class="col-sm-6 col-form-label">EMAIL:</label>
+                            <label for="email" class="col-sm-6 col-form-label" required>EMAIL:</label>
                             <div class="col-sm-6">
                                 
                             <input type="email" class="form-control " name="email" placeholder="email"
                             [(ngModel)]="usr_Registrate.email">
                             </div>
-                                
-
                         </div>
                         <div class="form-group row mb-2">
                             <label for="name" class="col-sm-6 col-form-label" >NAME: </label>
@@ -43,22 +41,22 @@
 
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="preferredGender" class="col-sm-6 col-form-label" >PREFERRED GENDER: </label>
+                            <label for="password" class="col-sm-6 col-form-label" >PREFERRED GENDER: </label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" name="preferredGender"
-                                placeholder="preferredGender" [(ngModel)]="usr_Registrate.preferredGender">
+                                <select class="form-select" name="preferredGender"  [(ngModel)]="usr_Registrate.preferredGender">
+                                    <option value="H" >H</option>
+                                    <option value="M" >M</option>
+                                    </select>
                             </div>
-                            
-
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="gender" class="col-sm-6 col-form-label" >GENDER: </label>
+                            <label for="password" class="col-sm-6 col-form-label" >GENDER: </label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" name="gender" placeholder="gender"
-                                [(ngModel)]="usr_Registrate.gender">  
+                                <select class="form-select" name="preferredGender"  [(ngModel)]="usr_Registrate.gender">
+                                    <option value="H" >H</option>
+                                    <option value="M" >M</option>
+                                    </select>
                             </div>
-                            
-
                         </div>
                         <div class="form-group row mb-2">
                             <label for="age" class="col-sm-6 col-form-label" >AGE: </label>
@@ -69,7 +67,12 @@
                             
 
                         </div>
-                        <button class="btn btn-primary mt-2" type="submit">Registrar</button>
+                        <div class="form-group">
+                            <button  class="btn btn-primary mt-2" type="submit">
+                                Registrar
+                            </button>
+                            <a routerLink="/" class="btn btn-link">HOME</a>
+                        </div>
                         <hr>
                     </form>
             </div>

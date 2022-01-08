@@ -1,3 +1,4 @@
+//interface to gets the response
 export interface Datauser {
     message:    string;
     isLoggedIn: boolean;
