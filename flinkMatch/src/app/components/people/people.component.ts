@@ -10,21 +10,24 @@ export class PeopleComponent implements OnInit {
   public preferredGender: any;
   get_People: any;
   contact: any;
+  contador = 0;
+  mostrar = true;
+
   constructor(private serviceUser: PeopleService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getContact();
+    this.getContacts();
+    // gets the preferredGender params
     this.router.params.subscribe(
       (params: Params) => {
         this.preferredGender = params['preferredGender'];
-        //obtener el genero preferido.
         console.log(this.preferredGender);
       }
     );
 
   }
-
-  getContact() {
+//get all contacts and then filters by gender
+  getContacts() {
     this.serviceUser.getPeople()
       .subscribe(people => {
         this.get_People = people.allWaifusAndHusbandos;
@@ -32,6 +35,20 @@ export class PeopleComponent implements OnInit {
         console.log(people.allWaifusAndHusbandos)
         console.log(this.contact);
       });
+
+  }
+  // these methods help to show the individual cards 
+  like() {
+    this.contador = this.contador + 1;
+    if (this.contador > this.contact.length) {
+      alert("Ya no hay contactos");
+    }
+  }
+  dislike() {
+    this.contador = this.contador + 1;
+    if (this.contador > this.contact.length) {
+      alert("Ya no hay contactos");
+    }
 
   }
 
