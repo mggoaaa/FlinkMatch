@@ -9,3 +9,4 @@ Flink Match is an application like tinder, covers certain points:
 Run in command window inside FLINKMATCH FOLDER
 - npm install
 - ng serve --open
+-  Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
