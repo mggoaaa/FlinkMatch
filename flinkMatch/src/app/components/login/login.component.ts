@@ -20,11 +20,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //send data to login
   login(form: NgForm) {
     this.serviceUser.login(this.userLogin).subscribe(
       data => {
         this.preferredGender = data.user.preferredGender;
         console.log(this.preferredGender);
+        //send parameter to filter gender
         this.router.navigateByUrl(`/people/${this.preferredGender}`);
       }
       
