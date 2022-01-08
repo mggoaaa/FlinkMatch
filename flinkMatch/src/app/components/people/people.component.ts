@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from 'src/app/services/people.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
@@ -13,7 +14,8 @@ export class PeopleComponent implements OnInit {
   contador = 0;
   mostrar = true;
 
-  constructor(private serviceUser: PeopleService, private router: ActivatedRoute) { }
+  constructor(private serviceUser: PeopleService, private router: ActivatedRoute,private routers: Router,
+    private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.getContacts();
@@ -49,6 +51,14 @@ export class PeopleComponent implements OnInit {
     if (this.contador > this.contact.length) {
       alert("Ya no hay contactos");
     }
+
+  }
+  // salir
+  salir(){
+    //localStorage.removeItem('usuario');
+    this.cookieService.delete('islogin');
+    this.routers.navigate([`/login`]);
+    window.location.reload();
 
   }
 
