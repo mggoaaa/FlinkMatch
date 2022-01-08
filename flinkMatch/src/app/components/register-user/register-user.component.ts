@@ -35,8 +35,12 @@ export class RegisterUserComponent implements OnInit {
     this.serviceUser.newUser(this.usr_Registrate).subscribe(
       res => {
         //return home
+        alert("User registrado");
         this.router.navigateByUrl('/');
         console.log(res);
+      },(err) => {
+        console.log(err)
+        alert('user ya registrado, intenta con otro correo')
       }
     );
   }
