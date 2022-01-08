@@ -1,77 +1,82 @@
 <div class="row justify-content-center">
     <div class="col-4">
         <div class="card o-hidden border-0 shadow-lg mt-5">
-            <h4 class="card-header text-center">REGISTER</h4>
+            <img class="m-1" style="height: 160px; width: 426px;" src="/assets/img/register.png" alt="Image Icon">
+
             <div class="card-body ">
-                <!-- Nested Row within Card Body -->
-                    <form  (ngSubmit)="newUser(LoginForm)" #LoginForm='ngForm'>
-                        <div class="form-group row mb-2">
-                            <label for="email" class="col-sm-6 col-form-label">EMAIL:</label>
-                            <div class="col-sm-6">
-                                
+                <!-- Form for register -->
+                <form (ngSubmit)="newUser(LoginForm)" #LoginForm='ngForm'>
+                    <div class="form-group row mb-2">
+                        <label for="email" class="col-sm-6 col-form-label" required>EMAIL:</label>
+                        <div class="col-sm-6">
+
                             <input type="email" class="form-control " name="email" placeholder="email"
-                            [(ngModel)]="usr_Registrate.email">
-                            </div>
-                                
-
+                                [(ngModel)]="usr_Registrate.email">
                         </div>
-                        <div class="form-group row mb-2">
-                            <label for="name" class="col-sm-6 col-form-label" >NAME: </label>
-                            <div class="col-sm-6">
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="name" class="col-sm-6 col-form-label">NAME: </label>
+                        <div class="col-sm-6">
 
-                                <input type="text" class="form-control form-control-user" name="name" placeholder="name"
+                            <input type="text" class="form-control form-control-user" name="name" placeholder="name"
                                 [(ngModel)]="usr_Registrate.name">
-                            </div>
-
                         </div>
-                        <div class="form-group row mb-2">
-                            <label for="lastname" class="col-sm-6 col-form-label" >LAST NAME: </label>
-                            <div class="col-sm-6">
 
-                                <input type="text" class="form-control form-control-user" name="lastname"
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="lastname" class="col-sm-6 col-form-label">LAST NAME: </label>
+                        <div class="col-sm-6">
+
+                            <input type="text" class="form-control form-control-user" name="lastname"
                                 placeholder="lastname" [(ngModel)]="usr_Registrate.lastName">
-                            </div>
-
                         </div>
-                        <div class="form-group row mb-2">
-                            <label for="password" class="col-sm-6 col-form-label" >PASSWORD: </label>
-                            <div class="col-sm-6">
-                                <input type="password" class="form-control form-control-user" name="password"
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="password" class="col-sm-6 col-form-label">PASSWORD: </label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control form-control-user" name="password"
                                 placeholder="password" [(ngModel)]="usr_Registrate.password">
-                            </div>
-                            
-
                         </div>
-                        <div class="form-group row mb-2">
-                            <label for="preferredGender" class="col-sm-6 col-form-label" >PREFERRED GENDER: </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" name="preferredGender"
-                                placeholder="preferredGender" [(ngModel)]="usr_Registrate.preferredGender">
-                            </div>
-                            
-
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="password" class="col-sm-6 col-form-label">PREFERRED GENDER: </label>
+                        <div class="col-sm-6">
+                            <select class="form-select" name="preferredGender"
+                                [(ngModel)]="usr_Registrate.preferredGender">
+                                <option value="H">H</option>
+                                <option value="M">M</option>
+                            </select>
                         </div>
-                        <div class="form-group row mb-2">
-                            <label for="gender" class="col-sm-6 col-form-label" >GENDER: </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" name="gender" placeholder="gender"
-                                [(ngModel)]="usr_Registrate.gender">  
-                            </div>
-                            
-
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="password" class="col-sm-6 col-form-label">GENDER: </label>
+                        <div class="col-sm-6">
+                            <select class="form-select" name="preferredGender" [(ngModel)]="usr_Registrate.gender">
+                                <option value="H">H</option>
+                                <option value="M">M</option>
+                            </select>
                         </div>
-                        <div class="form-group row mb-2">
-                            <label for="age" class="col-sm-6 col-form-label" >AGE: </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" name="age" placeholder="age"
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="age" class="col-sm-6 col-form-label">AGE: </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control form-control-user" name="age" placeholder="age"
                                 [(ngModel)]="usr_Registrate.age">
-                            </div>
-                            
-
                         </div>
-                        <button class="btn btn-primary mt-2" type="submit">Registrar</button>
-                        <hr>
-                    </form>
+
+
+                    </div>
+                    <div class="row ">
+                        <div class=" col-md-3 "><button class="btn btn-success mt-2" type="submit">
+                                Register 
+                            </button></div>
+                        <div class=" col-md-5 offset-md-3"><button class="btn btn-light mt-2" routerLink="/">
+                                Return Home
+                            </button></div>
+                    </div>
+
+                    <hr>
+                </form>
             </div>
         </div>
 
