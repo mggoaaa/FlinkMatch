@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {All} from '../interface/waifusAndHusbando.response';
+import {Contact} from '../interface/waifusAndHusbando.response';
 
 @Injectable({
   providedIn: 'root'

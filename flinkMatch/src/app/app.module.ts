@@ -8,6 +8,8 @@ import { RegisterUserComponent } from './components/register-user/register-user.
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { PeopleComponent } from './components/people/people.component';
+//import { SwiperModule } from 'angular2-useful-swiper';
+
 @NgModule({
   declarations: [
     AppComponent,
