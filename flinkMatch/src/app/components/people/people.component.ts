@@ -8,13 +8,13 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./people.component.css']
 })
 export class PeopleComponent implements OnInit {
-  public preferredGender: any;
+  preferredGender: any;
   get_People: any;
   contact: any;
   contador = 0;
   mostrar = true;
 
-  constructor(private serviceUser: PeopleService, private router: ActivatedRoute,private routers: Router,
+  constructor(private serviceUser: PeopleService, private router: ActivatedRoute, private routers: Router,
     private cookieService: CookieService) { }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class PeopleComponent implements OnInit {
     );
 
   }
-//get all contacts and then filters by gender
+  //get all contacts and then filters by gender
   getContacts() {
     this.serviceUser.getPeople()
       .subscribe(people => {
@@ -53,11 +53,11 @@ export class PeopleComponent implements OnInit {
     }
 
   }
-  // salir
-  salir(){
+  // exit
+  salir() {
     //localStorage.removeItem('usuario');
     this.cookieService.delete('islogin');
-    this.routers.navigate([`/login`]);
+    this.routers.navigate(['/login']);
     window.location.reload();
 
   }
